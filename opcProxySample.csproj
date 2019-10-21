@@ -5,4 +5,13 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="opcProxy.core" Version="0.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
+    <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
+  </ItemGroup>
+
 </Project>
