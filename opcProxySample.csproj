@@ -6,12 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="opcProxy.core" Version="0.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
     <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
+    <ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />
   </ItemGroup>
 
 </Project>
