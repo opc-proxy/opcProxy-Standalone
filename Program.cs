@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 using OpcProxyClient;
 using OpcGrpcConnect;
 using OpcInfluxConnect;
-
+using opcKafkaConnect;
 
 namespace OPC_Proxy
 {
@@ -16,9 +16,11 @@ namespace OPC_Proxy
 
             HttpImpl opcHttpConnector = new HttpImpl();
             InfluxImpl influx = new InfluxImpl();
+            KafkaConnect kafka = new KafkaConnect();
 
             man.addConnector(opcHttpConnector);
             man.addConnector(influx);
+            man.addConnector(kafka);
 
             man.run();
 
