@@ -10,7 +10,7 @@
         "loglevel" :"debug"
     },
     "nodesLoader" :{
-        "whiteList":[]
+        "whiteList":["ciao"]
     }
 
 }

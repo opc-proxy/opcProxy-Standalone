@@ -12,17 +12,17 @@ namespace OPC_Proxy
         static int Main(string[] args)
         {
 
-            serviceManager man = new serviceManager(args);            
+            serviceManager manager = new serviceManager(args);            
 
             HttpImpl opcHttpConnector = new HttpImpl();
             InfluxImpl influx = new InfluxImpl();
             KafkaConnect kafka = new KafkaConnect();
 
-            man.addConnector(opcHttpConnector);
-            man.addConnector(influx);
-            man.addConnector(kafka);
+            manager.addConnector(opcHttpConnector);
+            manager.addConnector(influx);
+            manager.addConnector(kafka);
 
-            man.run();
+            manager.run();
 
             return (int)OPCclient.ExitCode;           
 
