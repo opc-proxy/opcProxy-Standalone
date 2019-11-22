@@ -1,4 +1,7 @@
-﻿using OpcProxyCore;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using OpcProxyCore;
 using Newtonsoft.Json.Linq;
 using OpcProxyClient;
 using OpcGrpcConnect;
@@ -23,10 +26,7 @@ namespace OPC_Proxy
             manager.addConnector(kafka);
 
             manager.run();
-
-            return (int)OPCclient.ExitCode;           
-
-            // db.Dispose();
+            return 0; 
         }
         
     }
