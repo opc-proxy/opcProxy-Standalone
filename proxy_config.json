@@ -7,10 +7,10 @@
         "isInMemory":true
     },
     "loggerConfig" :{
-        "loglevel" :"debug"
+        "loglevel" :"info"
     },
     "nodesLoader" :{
-        "whiteList":["ciao"]
+        "whiteList":["ciao","ind_PV01_O"]
     }
 
 }
