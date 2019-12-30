@@ -1,10 +1,10 @@
-# OPC-Proxy Standalone Exacutable
+# OPC-Proxy Standalone Executable
 
 Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafka registered endpoint.
 
 # Getting Started
 
-Follow the docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html).
+**Follow the docs at** [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html).
 
 Requirements:
 
