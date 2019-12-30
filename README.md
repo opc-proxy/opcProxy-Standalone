@@ -11,15 +11,19 @@ Requirements:
 - Install .NET Core >= 2.2 (all three library: .NET core SDK, .NET core Runtime, ASP .NET core runtime.)
 - A test OPC-server, we suggest [Node-OPCUA](https://github.com/node-opcua/node-opcua-sampleserver) if you are familiar with NodeJS.
 
+The .NET dependencies are not needed if you run it with Docker.
 
-### Start with Docker
+
+### Run it with Docker
 
 ``` bash
 docker pull openscada/opc-proxy
+docker create --name proxy_test --network="host" -v absolute_path_to_config_dir:/app/configs openscada/opc-proxy
+docker start -i proxy_test
 ```
 
 
-### OR Build and Run
+### OR Build with .NET and Run
 ```bash
 dotnet build
 dotnet run
