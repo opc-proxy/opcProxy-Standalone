@@ -1,5 +1,5 @@
 {
-    "endpointURL":"opc.tcp://xeplc.physik.uzh.ch:4840/s7OPC",
+    "opcServerURL":"opc.tcp://xeplc.physik.uzh.ch:4840/s7OPC",
     "reconnectPeriod":10,
     "publishingInterval": 1000,
 
