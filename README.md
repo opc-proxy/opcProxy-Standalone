@@ -25,7 +25,9 @@ Start your OPC-test server first.
 docker pull openscada/opc-proxy
 mkdir local_config  # host dir to share configs
 wget -O local_config/proxy_config.json  https://raw.githubusercontent.com/opc-proxy/opcProxy-Standalone/master/proxy_config.json
-docker create --name proxy_test --network="host" -v absolute_path_to_local_config_dir:/app/configs openscada/opc-proxy
+cd local_config
+OPC_LOCAL_CONF=$(pwd)
+docker create --name proxy_test --network="host" -v $OPC_LOCAL_CONF:/app/configs openscada/opc-proxy
 docker start -i proxy_test
 ```
 
