@@ -28,6 +28,8 @@ docker start -i proxy_test
 
 ### OR Build with .NET and Run
 ```bash
+git clone git@github.com:opc-proxy/opcProxy-Standalone.git
+cd opcProxy-Standalone/
 dotnet build
 dotnet run
 ```
