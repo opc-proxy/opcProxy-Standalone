@@ -1,15 +1,15 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+      
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
+  
   <ItemGroup>
-	    <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
-	    <ProjectReference Include="..\opc-kafka\opcKafkaConnect\opcKafkaConnect.csproj" /> 
-	    <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
-      <!--<ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />-->
+    <PackageReference Include="opcProxy.core" Version="0.1.4" />
+    <PackageReference Include="opcProxy.GrpcConnector" Version="0.1.0" />
+    <PackageReference Include="opcProxy.InfluxDBConnector" Version="0.1.0" />
+    <PackageReference Include="opcProxy.KafkaConnector" Version="0.1.0" />
   </ItemGroup>
 
 </Project>
