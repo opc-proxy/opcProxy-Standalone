@@ -19,7 +19,7 @@ The .NET dependencies are not needed if you run it with Docker.
 
 ### Run it with Docker
 
-Start your OPC-test server first.
+Start your OPC-test server first, the following works for [Python minimal server example](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py).
 
 ``` bash
 docker pull openscada/opc-proxy
@@ -34,7 +34,8 @@ docker start -i proxy_test
 
 ### OR Build with .NET and Run
 
-Start your OPC-test server first.
+Start your OPC-test server first, the following works for [Python minimal server example](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py).
+
 
 ```bash
 git clone git@github.com:opc-proxy/opcProxy-Standalone.git
