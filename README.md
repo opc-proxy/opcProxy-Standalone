@@ -21,7 +21,9 @@ The .NET dependencies are not needed if you run it with Docker.
 
 ``` bash
 docker pull openscada/opc-proxy
-docker create --name proxy_test --network="host" -v absolute_path_to_config_dir:/app/configs openscada/opc-proxy
+mkdir local_config  # host dir to share configs
+wget -O local_config/proxy_config.json  https://raw.githubusercontent.com/opc-proxy/opcProxy-Standalone/master/proxy_config.json
+docker create --name proxy_test --network="host" -v absolute_path_to_local_config_dir:/app/configs openscada/opc-proxy
 docker start -i proxy_test
 ```
 
