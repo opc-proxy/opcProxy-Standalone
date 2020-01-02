@@ -3,7 +3,7 @@
 Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafka registered endpoint.
 
 
-## Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html). 
+## Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html)
 
 
 # Getting Started
