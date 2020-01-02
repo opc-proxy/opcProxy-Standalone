@@ -9,6 +9,9 @@
         "targetIdentifier" : "browseName",
         "whiteList":["MyVariable"]
 
-    }
+    },
+    "httpConnector" :   false,
+    "influxConnector" : false,
+    "kafkaConnector":   false
 }
 

@@ -27,7 +27,7 @@ mkdir local_config  # host dir to share configs
 wget -O local_config/proxy_config.json  https://raw.githubusercontent.com/opc-proxy/opcProxy-Standalone/master/proxy_config.json
 cd local_config
 OPC_LOCAL_CONF=$(pwd)
-docker create --name proxy_test --network="host" -v $OPC_LOCAL_CONF:/app/configs openscada/opc-proxy
+docker create --name proxy_test --network="host" -v ${OPC_LOCAL_CONF}:/app/configs openscada/opc-proxy
 docker start -i proxy_test
 ```
 
