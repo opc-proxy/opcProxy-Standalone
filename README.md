@@ -11,7 +11,7 @@ Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafk
 
 Requirements:
 
-- Install .NET Core >= 2.2 (all three library: .NET core SDK, .NET core Runtime, ASP .NET core runtime.)
+- Install .NET Core >= 3.1 (all three library: .NET core SDK, .NET core Runtime, ASP .NET core runtime.)
 - A test OPC-server, we suggest the [Python-OPCUA](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py) or the [Node-OPCUA](https://github.com/node-opcua/node-opcua-sampleserver) if you are familiar with NodeJS.
 
 The .NET dependencies are not needed if you run it with Docker.
