@@ -2,13 +2,20 @@
     "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
 
     "loggerConfig" :{
-        "loglevel" :"debug"
+        "loglevel" :"info"
     },
 
     "nodesLoader" : {
         "targetIdentifier" : "browseName",
         "whiteList":["MyVariable"]
 
-    }
+    },
+       "httpConnector" :   true,
+       "influxConnector" : false,
+       "kafkaConnector":   false,
+       "gRPC" :{
+	       "port" : 5051
+       }
+
 }
 
