@@ -10,7 +10,6 @@
         "whiteList":["MyVariable"]
 
     },
-<<<<<<< HEAD
        "httpConnector" :   true,
        "influxConnector" : false,
        "kafkaConnector":   false,
@@ -18,10 +17,5 @@
 	       "port" : 5051
        }
 
-=======
-    "httpConnector" :   false,
-    "influxConnector" : false,
-    "kafkaConnector":   false
->>>>>>> 879593736568066e9889c2755fe69938ad236d6b
 }
 
