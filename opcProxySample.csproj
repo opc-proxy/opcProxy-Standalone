@@ -6,7 +6,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="opcProxy.core" Version="0.1.4" />
+    <PackageReference Include="opcProxy.core" Version="0.1.8" />
     <PackageReference Include="opcProxy.GrpcConnector" Version="0.1.2" />
     <PackageReference Include="opcProxy.InfluxDBConnector" Version="0.1.0" />
     <PackageReference Include="opcProxy.KafkaConnector" Version="0.1.0" />
