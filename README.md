@@ -86,4 +86,5 @@ docker build -t openscada/opc-proxy -f Dockerfile .
 # create a directory, the config file must be named "proxy_config.json" 
 docker create --name foo -v absolute_path_to_config_dir:/app/configs  --network="host" openscada/opc-proxy 
 docker start -i foo
+docker push openscada/opc-proxy:latest
 ```
