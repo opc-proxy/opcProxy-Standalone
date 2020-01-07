@@ -1,16 +1,27 @@
 {
-    "opcServerURL":"opc.tcp://xeplc.physik.uzh.ch:4840/s7OPC",
-    "reconnectPeriod":10,
-    "publishingInterval": 1000,
+    "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
 
-    "nodesDatabase":{
-        "isInMemory":true
-    },
     "loggerConfig" :{
         "loglevel" :"info"
     },
-    "nodesLoader" :{
-        "whiteList":["ciao","ind_PV01_O"]
-    }
 
+    "nodesLoader" : {
+        "targetIdentifier" : "browseName",
+        "whiteList":["MyVariable"]
+
+    },
+<<<<<<< HEAD
+       "httpConnector" :   true,
+       "influxConnector" : false,
+       "kafkaConnector":   false,
+       "gRPC" :{
+	       "port" : 5051
+       }
+
+=======
+    "httpConnector" :   false,
+    "influxConnector" : false,
+    "kafkaConnector":   false
+>>>>>>> 879593736568066e9889c2755fe69938ad236d6b
 }
+
