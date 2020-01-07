@@ -3,7 +3,9 @@
 Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafka registered endpoint.
 
 
-### Follow the Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html). 
+# Documentation
+
+Full Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html)
 
 
 # Getting Started
@@ -11,7 +13,7 @@ Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafk
 
 Requirements:
 
-- Install .NET Core >= 2.2 (all three library: .NET core SDK, .NET core Runtime, ASP .NET core runtime.)
+- Install .NET Core >= 3.1 (all three library: .NET core SDK, .NET core Runtime, ASP .NET core runtime.)
 - A test OPC-server, we suggest the [Python-OPCUA](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py) or the [Node-OPCUA](https://github.com/node-opcua/node-opcua-sampleserver) if you are familiar with NodeJS.
 
 The .NET dependencies are not needed if you run it with Docker.
@@ -19,15 +21,27 @@ The .NET dependencies are not needed if you run it with Docker.
 
 ### Run it with Docker
 
+Start your OPC-test server first, the following works for [Python minimal server example](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py).
+
 ``` bash
 docker pull openscada/opc-proxy
-docker create --name proxy_test --network="host" -v absolute_path_to_config_dir:/app/configs openscada/opc-proxy
+mkdir local_config  # host dir to share configs
+wget -O local_config/proxy_config.json  https://raw.githubusercontent.com/opc-proxy/opcProxy-Standalone/master/proxy_config.json
+cd local_config
+OPC_LOCAL_CONF=$(pwd)
+docker create --name proxy_test --network="host" -v ${OPC_LOCAL_CONF}:/app/configs openscada/opc-proxy
 docker start -i proxy_test
 ```
 
 
 ### OR Build with .NET and Run
+
+Start your OPC-test server first, the following works for [Python minimal server example](https://github.com/FreeOpcUa/python-opcua/blob/master/examples/server-minimal.py).
+
+
 ```bash
+git clone git@github.com:opc-proxy/opcProxy-Standalone.git
+cd opcProxy-Standalone/
 dotnet build
 dotnet run
 ```
