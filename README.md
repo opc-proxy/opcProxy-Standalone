@@ -5,7 +5,7 @@ Standalone OPC-Proxy, runs a configurable opc-proxy with GRPC, InfluxDB and Kafk
 
 # Documentation
 
-Full Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/GettingStarted/docker.html)
+Full Docs at [opc-proxy.readthedocs.io](https://opc-proxy.readthedocs.io/en/latest/intro.html)
 
 
 # Getting Started
