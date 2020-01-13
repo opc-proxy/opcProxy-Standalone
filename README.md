@@ -64,7 +64,7 @@ Create a config file named ```proxy_config.json```:
         "whiteList":["MyVariable"]
        }
         
-       "httpConnector" :   false,
+       "grpcConnector" :   false,
        "influxConnector" : false,
        "kafkaConnector":   false
 }
