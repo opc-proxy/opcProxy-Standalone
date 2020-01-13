@@ -22,7 +22,7 @@ namespace OPC_Proxy
             JObject raw_conf = manager.getRawConfig();
             standaloneConfigs user_config = raw_conf.ToObject<standaloneConfigs>();
 
-            if(user_config.httpConnector) {
+            if(user_config.grpcConnector) {
                 HttpImpl opcHttpConnector = new HttpImpl();
                 manager.addConnector(opcHttpConnector);
             }
@@ -45,12 +45,12 @@ namespace OPC_Proxy
     /// Additional configuration class only for the standalone OPC-Proxy executable
     /// </summary>
     public class standaloneConfigs {
-        public bool httpConnector {get;set;}
+        public bool grpcConnector {get;set;}
         public bool influxConnector {get;set;}
         public bool kafkaConnector {get;set;}
 
         public standaloneConfigs(){
-            httpConnector = false;
+            grpcConnector = false;
             influxConnector = false;
             kafkaConnector = false;
         }
