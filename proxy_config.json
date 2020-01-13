@@ -10,11 +10,12 @@
         "whiteList":["MyVariable"]
 
     },
-       "httpConnector" :   true,
+       "grpcConnector" :   true,
        "influxConnector" : false,
-       "kafkaConnector":   false,
+       "kafkaConnector":   true,
        "gRPC" :{
 	       "port" : 5051
        }
+
 }
 
