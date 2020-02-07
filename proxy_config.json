@@ -10,11 +10,28 @@
         "whiteList":["MyVariable"]
 
     },
-       "grpcConnector" :   true,
+       "grpcConnector" :   false,
        "influxConnector" : false,
-       "kafkaConnector":   true,
+       "kafkaConnector":   false,
+       "RESTConnector":    true,
+       
        "gRPC" :{
 	       "port" : 5051
+       },
+
+       "RESTapi": {
+               "port" : 8087,
+               "urlPrefix" : "",
+	       "host":"localhost",
+               "enableBasicAuth" : true,
+	       "basicAuth" : [
+		       ["pino","123","A"]
+	       	],
+               "enableStaticFiles" : false,
+               "apyKey" : "pippo",
+               "enableAPIkey" : false,
+	       "staticFilesPath" : "./public/",
+		"enableStaticFiles": true
        }
 
 }

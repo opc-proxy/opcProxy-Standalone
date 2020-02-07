@@ -7,6 +7,7 @@ using OpcProxyClient;
 using OpcGrpcConnect;
 using OpcInfluxConnect;
 using opcKafkaConnect;
+using opcRESTconnector;
 
 namespace OPC_Proxy
 {
@@ -34,6 +35,10 @@ namespace OPC_Proxy
                 KafkaConnect kafka = new KafkaConnect();
                 manager.addConnector(kafka);
             }
+            if(user_config.RESTConnector){
+                opcREST rest = new opcREST();
+                manager.addConnector(rest);
+            }
 
             manager.run();
             return 0; 
@@ -48,11 +53,13 @@ namespace OPC_Proxy
         public bool grpcConnector {get;set;}
         public bool influxConnector {get;set;}
         public bool kafkaConnector {get;set;}
+        public bool RESTConnector {get;set;}
 
         public standaloneConfigs(){
             grpcConnector = false;
             influxConnector = false;
             kafkaConnector = false;
+            RESTConnector = false;
         }
     }  
 }
