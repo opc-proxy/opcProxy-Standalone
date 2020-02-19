@@ -23,8 +23,9 @@
                "port" : 8087,
                "urlPrefix" : "",
 	       "host":"localhost",
-               "enableBasicAuth" : true,
-	       "basicAuth" : [
+               "enableBasicAuth" : false,
+               "enableCookieAuth" : true,
+	       "userAuth" : [
 		       ["pino","123","A"]
 	       	],
                "enableStaticFiles" : false,
