@@ -26,7 +26,8 @@
                "enableBasicAuth" : false,
                "enableCookieAuth" : true,
 	       "userAuth" : [
-		       ["pino","123","A"]
+		       ["pino","123","A"],
+		       ["gino","123","R"]
 	       	],
                "enableStaticFiles" : false,
                "apyKey" : "pippo",
