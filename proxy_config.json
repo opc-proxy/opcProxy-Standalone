@@ -11,27 +11,27 @@
 
     },
        "grpcConnector" :   false,
-       "influxConnector" : false,
+       "influxConnector" : true,
        "kafkaConnector":   false,
-       "RESTConnector":    true,
+       "RESTConnector":    false,
        
        "gRPC" :{
 	       "port" : 5051
        },
-
+	"influx":
+	{
+		"organizationName" : "jo",
+	        "bucketName" : "prova",
+		"timeoutMs"  : 10000,
+		"flushIntervalMs":2000
+	},
        "RESTapi": {
                "port" : 8087,
                "urlPrefix" : "",
 	       "host":"localhost",
-               "enableBasicAuth" : false,
                "enableCookieAuth" : true,
-	       "userAuth" : [
-		       ["pino","123","A"],
-		       ["gino","123","R"]
-	       	],
+		"serverLog" : false, 
                "enableStaticFiles" : false,
-               "apyKey" : "pippo",
-               "enableAPIkey" : false,
 	       "staticFilesPath" : "./public/",
 		"enableStaticFiles": true
        }
