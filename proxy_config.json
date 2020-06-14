@@ -1,5 +1,5 @@
 {
-    "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
+    "opcServerURL":"opc.tcp://localhost:30696/freeopcua/server/",
 
     "loggerConfig" :{
         "loglevel" :"info"
@@ -11,9 +11,9 @@
 
     },
        "grpcConnector" :   false,
-       "influxConnector" : true,
+       "influxConnector" : false,
        "kafkaConnector":   false,
-       "RESTConnector":    false,
+       "RESTConnector":    true,
        
        "gRPC" :{
 	       "port" : 5051
