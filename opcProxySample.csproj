@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-	    <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
+	  <!--	    <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
 	    <ProjectReference Include="..\opc-kafka\opcKafkaConnect\opcKafkaConnect.csproj" /> 
+	  -->
 	    <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
-      <ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />
-      <ProjectReference Include="..\RESTconnector\opcREST\opcREST.csproj" /> 
+            <ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />
+            <ProjectReference Include="..\RESTconnector\opcREST\opcREST.csproj" />
   </ItemGroup>
-
 </Project>

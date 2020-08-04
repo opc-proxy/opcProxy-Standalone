@@ -2,16 +2,20 @@
     "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
 
     "loggerConfig" :{
-        "loglevel" :"info"
+        "loglevel" :"debug"
     },
 
     "nodesLoader" : {
         "targetIdentifier" : "browseName",
-        "whiteList":["MyVariable"]
+        "whiteList":["R01","MyVariable"],
+	"contains":["PV"]
 
     },
+    "nodesDatabase" :{
+	    "isInMemory":true
+    },
        "grpcConnector" :   false,
-       "influxConnector" : false,
+       "influxConnector" : true,
        "kafkaConnector":   false,
        "RESTConnector":    true,
        
@@ -20,20 +24,18 @@
        },
 
        "RESTapi": {
+	       "serverLog":true,
                "port" : 8087,
                "urlPrefix" : "",
-	       "host":"localhost",
-               "enableBasicAuth" : false,
+	       "host":"*",
                "enableCookieAuth" : true,
-	       "userAuth" : [
-		       ["pino","123","A"],
-		       ["gino","123","R"]
-	       	],
-               "enableStaticFiles" : false,
-               "apyKey" : "pippo",
-               "enableAPIkey" : false,
 	       "staticFilesPath" : "./public/",
-		"enableStaticFiles": true
+	       "enableStaticFiles": true
+       },
+
+       "influx" :{
+	       "organizationName" : "test",
+	       "bucketName" : "test2"
        }
 
 }

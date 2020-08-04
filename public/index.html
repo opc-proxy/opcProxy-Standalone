@@ -3,15 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>simpleServer</title>
+    <title>OPC-Proxy</title>
+    
+    <script type="module" src="./main.js" ></script>
+
+    <style>
+        div.container{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            width: 100%;
+            height: 90vh;
+        }
+        valve-pd demo-valve{
+            width: 3rem;
+            height: 3rem;
+        }
+    </style>
+
+
 </head>
 
-<body>
+<body>    
+    <a href="/admin/write_access"> Request write access </a>
     
-    <h1>
-        It Works folks :)
-    </h1>
-    
+    <div class="container"> 
+        <valve-pd  name="SPV01O"></valve-pd> 
+        <valve-pd  name="PV01"></valve-pd> 
+        <valve-pd  name="R01"></valve-pd> 
+        <demo-valve  name="SPV01O"></demo-valve > 
+    </div>
+
 </body>
 </html>

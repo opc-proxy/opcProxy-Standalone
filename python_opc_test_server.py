@@ -21,6 +21,12 @@ if __name__ == "__main__":
 
     # populating our address space
     myobj = objects.add_object(idx, "MyObject")
+    myvar = myobj.add_variable(idx, "PV01", False)
+    myvar.set_writable()    # Set MyVariable to be writable by clients
+    myvar = myobj.add_variable(idx, "SPV01O", 0)
+    myvar.set_writable()    # Set MyVariable to be writable by clients
+    myvar = myobj.add_variable(idx, "R01", True )
+    myvar.set_writable()    # Set MyVariable to be writable by clients
     myvar = myobj.add_variable(idx, "MyVariable", 6.7)
     myvar.set_writable()    # Set MyVariable to be writable by clients
 
@@ -32,9 +38,9 @@ if __name__ == "__main__":
         myvar.set_value(count)
         while True:
             time.sleep(1)
-            count = myvar.get_value()
-            count += 0.1
-            myvar.set_value(count)
+            #count = myvar.get_value()
+            #count += 0.1
+            #myvar.set_value(count)
     finally:
         #close connection, remove subcsriptions, etc
         server.stop()
