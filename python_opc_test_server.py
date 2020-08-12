@@ -21,15 +21,20 @@ if __name__ == "__main__":
 
     # populating our address space
     myobj = objects.add_object(idx, "MyObject")
-    myvar = myobj.add_variable(idx, "PV01", False)
+#    myvar = myobj.add_variable(idx, "PV01", False)
+#    myvar.set_writable()    # Set MyVariable to be writable by clients
+#    myvar = myobj.add_variable(idx, "SPV01O", 0)
+#    myvar.set_writable()    # Set MyVariable to be writable by clients
+    myvar = myobj.add_variable(idx, "Req_PV01", False )
     myvar.set_writable()    # Set MyVariable to be writable by clients
-    myvar = myobj.add_variable(idx, "SPV01O", 0)
-    myvar.set_writable()    # Set MyVariable to be writable by clients
-    myvar = myobj.add_variable(idx, "R01", True )
-    myvar.set_writable()    # Set MyVariable to be writable by clients
-    myvar = myobj.add_variable(idx, "MyVariable", 6.7)
+    myvar = myobj.add_variable(idx, "", 6.7)
     myvar.set_writable()    # Set MyVariable to be writable by clients
 
+    for x in range(0,5) :
+        myobj.add_variable(idx,"PV0" + str(x), False).set_writable()
+        myobj.add_variable(idx,"SPV0" + str(x) +"O", False).set_writable()
+        myobj.add_variable(idx,"Req_PV0" + str(x) , False).set_writable()
+    
     # starting!
     server.start()
     

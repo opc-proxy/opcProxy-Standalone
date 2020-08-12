@@ -7,7 +7,6 @@
 
     "nodesLoader" : {
         "targetIdentifier" : "browseName",
-        "whiteList":["R01","MyVariable"],
 	"contains":["PV"]
 
     },
