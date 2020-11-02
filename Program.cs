@@ -4,10 +4,11 @@ using System.Threading.Tasks;
 using OpcProxyCore;
 using Newtonsoft.Json.Linq;
 using OpcProxyClient;
-/*using OpcGrpcConnect;
-using opcKafkaConnect;*/
-using opcRESTconnector;
+//using OpcGrpcConnect;
 using OpcInfluxConnect;
+//using opcKafkaConnect;
+using opcRESTconnector;
+using opcPrometheus;
 
 namespace OPC_Proxy
 {
@@ -22,11 +23,16 @@ namespace OPC_Proxy
             // getting the raw configuration 
             JObject raw_conf = manager.getRawConfig();
             standaloneConfigs user_config = raw_conf.ToObject<standaloneConfigs>();
-/*
-            if(user_config.grpcConnector) {
+/*            if(user_config.grpcConnector) {
                 HttpImpl opcHttpConnector = new HttpImpl();
                 manager.addConnector(opcHttpConnector);
             }
+	    */
+            if(user_config.influxConnector){
+                InfluxConnect influx = new InfluxConnect();
+                manager.addConnector(influx);
+            }
+	    /*
             if(user_config.kafkaConnector){
                 KafkaConnect kafka = new KafkaConnect();
                 manager.addConnector(kafka);
@@ -35,10 +41,11 @@ namespace OPC_Proxy
                 opcREST rest = new opcREST();
                 manager.addConnector(rest);
             }
-            if(user_config.influxConnector){
-                InfluxConnect influx = new InfluxConnect();
-                manager.addConnector(influx);
-            }
+
+	    if(user_config.PromConnector){
+		    opcPromConnect prom = new opcPromConnect();
+		    manager.addConnector(prom);
+	    }
 
             manager.run();
             return 0; 
@@ -54,12 +61,14 @@ namespace OPC_Proxy
         public bool influxConnector {get;set;}
         public bool kafkaConnector {get;set;}
         public bool RESTConnector {get;set;}
+        public bool PromConnector {get;set;}
 
         public standaloneConfigs(){
             grpcConnector = false;
             influxConnector = false;
             kafkaConnector = false;
             RESTConnector = false;
+            PromConnector = false;
         }
     }  
 }

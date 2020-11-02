@@ -81,7 +81,7 @@ This will tell the OPC-Proxy that:
 
 # Build the Docker image
 ```bash
-dotnet publish -c Release -r linux-musl-x64 --self-contained true 
+dotnet publish -c Release -r linux-musl-x64 --self-contained true /p:TrimUnusedDependencies=true
 docker build -t openscada/opc-proxy -f Dockerfile .
 # create a directory, the config file must be named "proxy_config.json" 
 docker create --name foo -v absolute_path_to_config_dir:/app/configs  --network="host" openscada/opc-proxy 

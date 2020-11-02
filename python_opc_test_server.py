@@ -35,6 +35,8 @@ if __name__ == "__main__":
         myobj.add_variable(idx,"SPV0" + str(x) +"O", False).set_writable()
         myobj.add_variable(idx,"Req_PV0" + str(x) , False).set_writable()
     
+    myvar = myobj.add_variable(idx, "MyVar", 1.0 )
+
     # starting!
     server.start()
     
@@ -43,9 +45,9 @@ if __name__ == "__main__":
         myvar.set_value(count)
         while True:
             time.sleep(1)
-            #count = myvar.get_value()
-            #count += 0.1
-            #myvar.set_value(count)
+            count = myvar.get_value()
+            count += 0.1
+            myvar.set_value(count)
     finally:
         #close connection, remove subcsriptions, etc
         server.stop()

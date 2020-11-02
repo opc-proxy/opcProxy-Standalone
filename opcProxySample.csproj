@@ -2,15 +2,20 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
 	  <!--	    <ProjectReference Include="..\opc-grpc\opcGrpcConnect\opcGrpcConnect.csproj" />
-	    <ProjectReference Include="..\opc-kafka\opcKafkaConnect\opcKafkaConnect.csproj" /> 
-	  -->
-	    <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
-            <ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />
-            <ProjectReference Include="..\RESTconnector\opcREST\opcREST.csproj" />
+	    <ProjectReference Include="..\opc-kafka\opcKafkaConnect\opcKafkaConnect.csproj" />--> 
+      <ProjectReference Include="..\opc-core\opcProxyCore\opcProxyCore.csproj" />
+      <ProjectReference Include="..\opc-influxdb\opcInfluxConnect\opcInfluxConnect.csproj" />
+      <ProjectReference Include="..\RESTconnector\opcREST\opcREST.csproj" />
+      <ProjectReference Include="..\opc-prometheus\opcPrometheus\opc-prometheus.csproj" /> 
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Packaging.Tools.Trimming" Version="1.1.0-preview1-26619-01" />
+  </ItemGroup>
+
 </Project>
