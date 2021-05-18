@@ -30,11 +30,14 @@ if __name__ == "__main__":
     myvar = myobj.add_variable(idx, "", 6.7)
     myvar.set_writable()    # Set MyVariable to be writable by clients
 
-    for x in range(0,5) :
+    list_var = []
+    for x in range(0,1000) :
         myobj.add_variable(idx,"PV0" + str(x), False).set_writable()
         myobj.add_variable(idx,"SPV0" + str(x) +"O", False).set_writable()
-        myobj.add_variable(idx,"Req_PV0" + str(x) , False).set_writable()
-    
+        gigio = myobj.add_variable(idx,"MyVar" + str(x) , 1.0) 
+        gigio.set_writable()
+        list_var.append(gigio) 
+        
     myvar = myobj.add_variable(idx, "MyVar", 1.0 )
 
     # starting!
@@ -43,11 +46,15 @@ if __name__ == "__main__":
     try:
         count = 1
         myvar.set_value(count)
+
         while True:
             time.sleep(1)
             count = myvar.get_value()
             count += 0.1
             myvar.set_value(count)
+            #for v in list_var:
+            #    v.set_value(count)
+
     finally:
         #close connection, remove subcsriptions, etc
         server.stop()

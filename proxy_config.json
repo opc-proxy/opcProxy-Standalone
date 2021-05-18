@@ -1,8 +1,9 @@
 {
     "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
-
+    "nodeReadPeriod_sec": 30,
+    "nodesUnavailAfter_sec":60,
     "loggerConfig" :{
-        "loglevel" :"info"
+        "loglevel" :"debug"
     },
 
     "nodesLoader" : {
@@ -16,8 +17,8 @@
        "grpcConnector" :   false,
        "influxConnector" : false,
        "kafkaConnector":   false,
-       "RESTConnector":    true,
-       "PromConnector" : true,
+       "RESTConnector":    false,
+       "PromConnector" : false,
        
        "gRPC" :{
 	       "port" : 5051
@@ -33,7 +34,7 @@
                "port" : 8087,
                "urlPrefix" : "",
 	       "host":"*",
-               "enableCookieAuth" : true,
+               "enableCookieAuth" : false,
 	       "staticFilesPath" : "./public/",
 	       "enableStaticFiles": true,
 	       "MJEmail": "xenoscope@physik.uzh.ch"
