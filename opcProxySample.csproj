@@ -2,14 +2,16 @@
       
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-      
+
   <ItemGroup>
-    <PackageReference Include="opcProxy.core" Version="0.1.9" />
-    <PackageReference Include="opcProxy.GrpcConnector" Version="0.1.3" />
-    <PackageReference Include="opcProxy.InfluxDBConnector" Version="0.1.0" />
-    <PackageReference Include="opcProxy.KafkaConnector" Version="0.1.1" />
+    <PackageReference Include="Microsoft.Packaging.Tools.Trimming" Version="1.1.0-preview1-26619-01" />
+    <PackageReference Include="opcProxy.GrpcConnector" Version="1.0.0" />
+    <PackageReference Include="opcProxy.InfluxDBConnector" Version="1.0.0" />
+    <PackageReference Include="opcProxy.KafkaConnector" Version="1.0.0" />
+    <PackageReference Include="opcProxy.Prometheus" Version="0.7.0" />
+    <PackageReference Include="opcProxy.WebServer" Version="0.7.0" />
   </ItemGroup>
 
 </Project>

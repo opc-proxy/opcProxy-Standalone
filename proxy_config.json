@@ -1,21 +1,50 @@
 {
     "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
-
+    "nodeReadPeriod_sec": 300,
+    "nodesUnavailAfter_sec":60,
     "loggerConfig" :{
         "loglevel" :"info"
     },
 
     "nodesLoader" : {
         "targetIdentifier" : "browseName",
-        "whiteList":["MyVariable"]
+	"contains":["PV","MyVar"]
 
     },
-       "grpcConnector" :   true,
-       "influxConnector" : false,
-       "kafkaConnector":   false,
+    "nodesDatabase" :{
+	    "isInMemory":true
+    },
+       "grpcConnector"  :  true,
+       "influxConnector":  false,
+       "kafkaConnector" :  true,
+       "RESTConnector"  :  true,
+       "PromConnector"  :  true,
+       
        "gRPC" :{
 	       "port" : 5051
-       }
+       },
+	"influx":
+	{
+		"organizationName" : "ab",
+	        "bucketName" : ""
+	},
+       
+	"RESTapi": {
+	       "serverLog":true,
+               "port" : 8087,
+               "urlPrefix" : "",
+	       "host":"*",
+               "enableCookieAuth" : false,
+	       "staticFilesPath" : "./public/",
+	       "enableStaticFiles": true,
+	       "MJEmail": "xenoscope@physik.uzh.ch"
+       },
 
+       "prometheus":{
+		"variableFilter" : {
+			"matchRegEx" : ["^"],
+			"notContain": ["Req","SP"]
+		}
+       }
 }
 

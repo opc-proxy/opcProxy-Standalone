@@ -44,7 +44,9 @@
 
   <TransportConfigurations/>
 
-  <TransportQuotas>
+
+
+<TransportQuotas>
     <OperationTimeout>600000</OperationTimeout>
     <MaxStringLength>1048576</MaxStringLength>
     <MaxByteStringLength>4194304</MaxByteStringLength>
@@ -60,6 +62,7 @@
     
     <!-- The default timeout for new sessions -->
     <DefaultSessionTimeout>600000</DefaultSessionTimeout>
+	
 
     <!-- The well-known URLs for the local discovery servers
          URLs are tested in the order they appear in this list. -->

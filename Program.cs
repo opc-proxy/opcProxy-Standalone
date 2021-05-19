@@ -7,6 +7,8 @@ using OpcProxyClient;
 using OpcGrpcConnect;
 using OpcInfluxConnect;
 using opcKafkaConnect;
+using opcRESTconnector;
+using opcPrometheus;
 
 namespace OPC_Proxy
 {
@@ -21,19 +23,29 @@ namespace OPC_Proxy
             // getting the raw configuration 
             JObject raw_conf = manager.getRawConfig();
             standaloneConfigs user_config = raw_conf.ToObject<standaloneConfigs>();
-
             if(user_config.grpcConnector) {
                 HttpImpl opcHttpConnector = new HttpImpl();
                 manager.addConnector(opcHttpConnector);
             }
+	    
             if(user_config.influxConnector){
-                InfluxImpl influx = new InfluxImpl();
+                InfluxConnect influx = new InfluxConnect();
                 manager.addConnector(influx);
             }
+	    
             if(user_config.kafkaConnector){
                 KafkaConnect kafka = new KafkaConnect();
                 manager.addConnector(kafka);
             }
+            if(user_config.RESTConnector){
+                opcREST rest = new opcREST();
+                manager.addConnector(rest);
+            }
+
+	    if(user_config.PromConnector){
+		    opcPromConnect prom = new opcPromConnect();
+		    manager.addConnector(prom);
+	    }
 
             manager.run();
             return 0; 
@@ -48,11 +60,15 @@ namespace OPC_Proxy
         public bool grpcConnector {get;set;}
         public bool influxConnector {get;set;}
         public bool kafkaConnector {get;set;}
+        public bool RESTConnector {get;set;}
+        public bool PromConnector {get;set;}
 
         public standaloneConfigs(){
             grpcConnector = false;
             influxConnector = false;
             kafkaConnector = false;
+            RESTConnector = false;
+            PromConnector = false;
         }
     }  
 }
