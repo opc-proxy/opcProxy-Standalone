@@ -14,9 +14,9 @@
     "nodesDatabase" :{
 	    "isInMemory":true
     },
-       "grpcConnector"  :  true,
+       "grpcConnector"  :  false,
        "influxConnector":  false,
-       "kafkaConnector" :  true,
+       "kafkaConnector" :  false,
        "RESTConnector"  :  true,
        "PromConnector"  :  true,
        
@@ -36,7 +36,7 @@
 	       "host":"*",
                "enableCookieAuth" : false,
 	       "staticFilesPath" : "./public/",
-	       "enableStaticFiles": true,
+	       "enableStaticFiles": false,
 	       "MJEmail": "xenoscope@physik.uzh.ch"
        },
 
