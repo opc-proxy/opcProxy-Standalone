@@ -1,9 +1,9 @@
 {
     "opcServerURL":"opc.tcp://localhost:4840/freeopcua/server/",
-    "nodeReadPeriod_sec": 30,
+    "nodeReadPeriod_sec": 300,
     "nodesUnavailAfter_sec":60,
     "loggerConfig" :{
-        "loglevel" :"debug"
+        "loglevel" :"info"
     },
 
     "nodesLoader" : {
@@ -14,19 +14,19 @@
     "nodesDatabase" :{
 	    "isInMemory":true
     },
-       "grpcConnector" :   false,
-       "influxConnector" : false,
-       "kafkaConnector":   false,
-       "RESTConnector":    false,
-       "PromConnector" : false,
+       "grpcConnector"  :  true,
+       "influxConnector":  false,
+       "kafkaConnector" :  true,
+       "RESTConnector"  :  true,
+       "PromConnector"  :  true,
        
        "gRPC" :{
 	       "port" : 5051
        },
 	"influx":
 	{
-		"organizationName" : "pollo",
-	        "bucketName" : "paul"
+		"organizationName" : "ab",
+	        "bucketName" : ""
 	},
        
 	"RESTapi": {

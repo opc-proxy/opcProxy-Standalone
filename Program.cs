@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 using OpcProxyCore;
 using Newtonsoft.Json.Linq;
 using OpcProxyClient;
-//using OpcGrpcConnect;
+using OpcGrpcConnect;
 using OpcInfluxConnect;
-//using opcKafkaConnect;
+using opcKafkaConnect;
 using opcRESTconnector;
 using opcPrometheus;
 
@@ -23,20 +23,20 @@ namespace OPC_Proxy
             // getting the raw configuration 
             JObject raw_conf = manager.getRawConfig();
             standaloneConfigs user_config = raw_conf.ToObject<standaloneConfigs>();
-/*            if(user_config.grpcConnector) {
+            if(user_config.grpcConnector) {
                 HttpImpl opcHttpConnector = new HttpImpl();
                 manager.addConnector(opcHttpConnector);
             }
-	    */
+	    
             if(user_config.influxConnector){
                 InfluxConnect influx = new InfluxConnect();
                 manager.addConnector(influx);
             }
-	    /*
+	    
             if(user_config.kafkaConnector){
                 KafkaConnect kafka = new KafkaConnect();
                 manager.addConnector(kafka);
-            }*/
+            }
             if(user_config.RESTConnector){
                 opcREST rest = new opcREST();
                 manager.addConnector(rest);
